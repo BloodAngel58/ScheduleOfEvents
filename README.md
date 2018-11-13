@@ -1,1 +1,1 @@
-# TestScheduleOfEvents
+# ScheduleOfEvents
