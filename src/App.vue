@@ -2,10 +2,10 @@
 <div>
   <my-header></my-header>
   <form>
-    <button type="submit">Добавить</button>
-    <EventsAdd></EventsAdd>
+    <EventsAdd class="EA" v-show="visible"></EventsAdd>
+    <label class="adPos" v-on:click="visible=!visible">Добавить позицию</label>
   <div class="container">    
-    <EventsItem></EventsItem>
+    <EventsItem></EventsItem><DataItem ></DataItem>
   </div>
   </form>
 </div>
@@ -14,17 +14,18 @@
 <script>
 import EventsAdd from './EventsAdd.vue'
 import EventsItem from './EventsItem.vue'
+import DataItem from './DataItem.vue'
 import myHeader from './Header.vue'
 
 export default {
   data(){
-    return {
-    }
+    return { visible: false   }
   },
   components: {
     myHeader,
     EventsAdd,
-    EventsItem
+    EventsItem,
+    DataItem
   }
 }
 </script>
@@ -33,5 +34,18 @@ export default {
   .container{
     display:flex;
     align-items:flex-start;
+    margin-top: 200px;
+  }
+  .EA{
+  float: right;
+  }
+  .adPos{
+    border: 4px solid green;
+        border-radius: 10px;
+        margin: 10px;
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: 20px;
+    padding: 15px;
   }
 </style>
